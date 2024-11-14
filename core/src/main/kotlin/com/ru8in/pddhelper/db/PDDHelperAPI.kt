@@ -22,10 +22,10 @@ object PDDHelperAPI {
 
     fun getQuestion(ticketNumber: Int = (1..40).random(), questionNumber: Int = (1..20).random()): Question {
         if (ticketNumber > 40 || ticketNumber < 1) {
-            throw IllegalArgumentException()
+            throw IllegalArgumentException("Ticket number must be between 1 and 40")
         }
         if (questionNumber > 20 || questionNumber < 1) {
-            throw IllegalArgumentException()
+            throw IllegalArgumentException("Question number must be between 1 and 20")
         }
 
         val questionsList =
