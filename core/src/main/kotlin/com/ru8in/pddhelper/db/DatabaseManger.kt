@@ -11,6 +11,8 @@ import kotlin.system.exitProcess
 object DatabaseManger {
     private var conn: Connection? = null
     private const val DB_PATH = "local/db/database.sqlite"
+    private const val MAX_RETRIES = 2
+    private var retryCount = 0
 
     init {
         this.getConnection()
@@ -18,9 +20,7 @@ object DatabaseManger {
     }
 
     private fun getConnection() {
-        var count = 0
-        val maxRetries = 2
-        while (true) {
+        repeat (MAX_RETRIES) {
             try {
                 Class.forName("org.sqlite.JDBC")
                 conn = DriverManager.getConnection("jdbc:sqlite:$DB_PATH")
@@ -29,7 +29,7 @@ object DatabaseManger {
                 if (!File(DB_PATH).exists()) {
                     File(DB_PATH).parentFile.mkdirs()
                 }
-                if (++count == maxRetries) throw ex
+                if (++retryCount == MAX_RETRIES) throw ex
             } catch (ex: Exception) {
                 ex.printStackTrace()
             }
