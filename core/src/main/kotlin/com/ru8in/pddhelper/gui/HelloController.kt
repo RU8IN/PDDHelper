@@ -1,4 +1,4 @@
-package com.ru8in.pddhelper.core
+package com.ru8in.pddhelper.gui
 
 import javafx.fxml.FXML
 import javafx.scene.control.Label

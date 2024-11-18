@@ -1,4 +1,4 @@
-package com.ru8in.pddhelper.core
+package com.ru8in.pddhelper.gui
 
 import com.ru8in.pddhelper.downloader.TicketsDownloader
 import javafx.fxml.FXML

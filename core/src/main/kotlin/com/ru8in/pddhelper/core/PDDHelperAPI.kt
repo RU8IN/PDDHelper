@@ -1,5 +1,6 @@
-package com.ru8in.pddhelper.db
+package com.ru8in.pddhelper.core
 
+import com.ru8in.pddhelper.db.DatabaseManger
 import com.ru8in.pddhelper.models.Question
 import com.ru8in.pddhelper.models.Statistic
 import kotlinx.serialization.json.Json
