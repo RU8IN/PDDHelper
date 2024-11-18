@@ -13,7 +13,6 @@ class HelloApplication : Application() {
     override fun start(stage: Stage) {
         this.setStage(stage)
         this.setScene("primary-scene.fxml")
-        this.loadImage("photo_2024-07-03_15-12-50.jpg")
     }
 
     private fun setStage(stage: Stage) {
